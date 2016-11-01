@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>My First Object</title>
+</head>
+<body>
+	<!-- 	
+	This is a simple Model View Controller (MVC) webapp.
+
+	It models a car which can do stuff like drive and honk.
+
+	The view is the browser window where car status is reported.
+
+	The controller is the keyboard and document.onkeyup() callback function
+	which updates the car's state by calling car methods and updates
+	the view by calling updateView().
+			                                                   [ keyboard ]
+			                                                        |
+			                                                        | triggers
+			                                                        v
+	+--------------------+  +--------------------+         +--------------------+
+	|                    |  |                    | updates |                    |
+	|     car object     |  |   browser window   |<--------| document.onkeyup() |
+	|                    |  |                    |    +----|   updateView()     |
+	+--------------------+  +--------------------+    |    +--------------------+
+	       Model     ^             View               |          Controller
+	                 | updates                        |
+	                 +--------------------------------+
+
+	-->
+
+	<!-- view -->
+	<p>
+	Welcome!  Guess what?  You have a car, a very simple car.<br>
+	Use the keyboard to control it:
+	</p>
+	<ul>
+		<li>d = drive to work</li>
+		<li>h = honk</li>
+		<li>t = tuneup</li>
+		<li>w = drive around the world</li>
+	</ul>
+	<p>
+	If it stops working, you might want to get a tuneup.
+	</p>
+
+	<table 	id="carStatus" 
+			style="border:1px solid black;">
+		<thead>
+			<tr>
+				<th colspan="2">Car Status</th>
+			</tr>
+			<tr>
+				<th>property name</th>
+				<th>value</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr><td>make</td><td id="carMake"></td></tr>
+			<tr><td>model</td><td id="carModel"></td></tr>
+			<tr><td>color</td><td id="carColor"></td></tr>
+			<tr><td>mileage</td><td id="carMileage"></td></tr>
+			<tr><td>isWorking</td><td id="carWorking"></td></tr>
+			<tr><td>activity</td><td id="carActivity"></td></tr>
+		</tbody>
+	</table>
+
+	<script type="text/javascript">
+
+		/* model */
+
+		var car = {
+			make: "Honda",
+			model: "Fit",
+			color: "Blue Rasberry",
+			mileage: 3000,
+			isWorking: true,
+
+			driveToWork: function(){
+
+				alert("Old Mileage: " + this.mileage)
+				
+				this.mileage = this.mileage + 8;
+				
+				alert("New mileage: " + this.mileage);
+			},
+
+			driveAroundWorld: function(){
+
+				alert("Old Mileage: " + this.mileage);
+
+				this.mileage = this.mileage + 24000;
+
+				alert("New Mileage: " + this.mileage);
+				alert("Car needs a tuneup!")
+
+				this.isWorking = false;
+			},
+
+			getTuneUp: function(){
+				alert("Car is ready to go!");
+				this.isWorking = true;
+			},
+
+			honk: function(){
+				alert("Meeeeeeeeowwwww")
+			} 
+		};
+
+		/* controller */
+
+		var lastActivity = "waiting";
+		document.onkeyup = function(event) {
+			/* 	
+				d = drive to work
+				h = honk
+				q = quit
+				t = tuneup
+				w = drive around the world
+			*/
+			var userKeyChar = String.fromCharCode(event.keyCode).toLowerCase();
+			var validKey = true;
+			console.log("userKeyChar", userKeyChar);
+
+			switch(userKeyChar) {
+				case 'd':
+					if (car.isWorking) {
+						car.driveToWork();
+						lastActivity = "drove to work";
+						console.log("Driving to work.");
+					} else {
+						console.log("Ignoring drive command.  Car needs tuneup.");
+					}
+					break;
+				case 'h':
+					car.honk();
+					lastActivity = "honked";
+					console.log("Honking");
+					break;
+				case 't':
+					car.getTuneUp();
+					lastActivity = "got tuneup";
+					console.log("Getting tuneup.");
+					break;
+				case 'w':
+					if (car.isWorking) {
+						car.driveAroundWorld();
+						lastActivity = "drove around the world";
+						console.log("Driving around the world.");
+					} else {
+						console.log("Ignoring world drive command.  Car needs tuneup.");
+					}
+					break;
+				default: {
+					validKey = false;
+					console.log("Ignoring invalid input key: " + userKeyChar);
+				}
+			}
+			if (validKey) {
+				updateView();
+			}
+		}
+
+		/* Update the view with the latest car status. */
+
+		function updateView() {
+			document.getElementById("carMake").innerHTML = car.make;
+			document.getElementById("carModel").innerHTML = car.model;
+			document.getElementById("carColor").innerHTML = car.color;
+			document.getElementById("carMileage").innerHTML = car.mileage;
+			document.getElementById("carWorking").innerHTML = car.isWorking;
+			document.getElementById("carActivity").innerHTML = lastActivity;
+		}
+
+	</script>
+	
+</body>
+</html>
