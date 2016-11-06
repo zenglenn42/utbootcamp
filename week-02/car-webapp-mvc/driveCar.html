@@ -6,10 +6,12 @@
 	<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 	<style>
 		body {
-			background: url("http://automobiles.honda.com/handlers/resize-image.ashx?w=1076&h=605&q=70&fn=/images/2016/fit/exterior-gallery-new/2016-silver-honda-fit-side3.jpg") no-repeat center center;
+			background: 
+			linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), 
+			url("http://automobiles.honda.com/handlers/resize-image.ashx?w=1076&h=605&q=70&fn=/images/2016/fit/exterior-gallery-new/2016-silver-honda-fit-side3.jpg") no-repeat center center;
 			background-size: cover;
-			color: black;
-			text-shadow: 1px 1px rgba(255,255,255,0.7);
+			color: white;
+			text-shadow: 2px 2px rgba(0,0,0,0.7);
 			font-family: 'Muli', sans-serif;
 			font-size: 2em;
 			font-weight: bold;
@@ -44,8 +46,7 @@
 
 	<!-- view -->
 	<p>
-	Welcome!  Guess what?  You have a car, a very simple car.<br>
-	Use the keyboard to control it:
+	What was the name of that cocktail last night that enabled you?  Luca Brasi?  Whatever, you've shaken it off.  It's a new day.  You can salvage the hits to your <a href="https://en.wikipedia.org/wiki/Whuffie">whuffie</a> behind the wheel of this late model Honda Fit.  You /own/ this car, not the other way around. F-ing Teslas.  So overrated.  Use the keyboard to control your ride:
 	</p>
 	<ul>
 		<li>d = drive to work</li>
@@ -54,7 +55,7 @@
 		<li>w = drive around the world</li>
 	</ul>
 	<p>
-	If it stops working, you might want to get a tuneup.
+	If it stops working, get a tuneup & a cup of <a href="http://www.austinhondaservice.com/continental-cafe/">Joe</a>.
 	</p>
 
 	<table 	id="carStatus" 
@@ -85,7 +86,7 @@
 		var car = {
 			make: "Honda",
 			model: "Fit",
-			color: "Blue Rasberry",
+			color: "Gunmetal Gray",
 			mileage: 3000,
 			isWorking: true,
 
