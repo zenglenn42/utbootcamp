@@ -1,8 +1,28 @@
-# driveCar MVC WebApp
+# Class Activity: jQuery Calculator
 
-This simple app models a car which may be controlled through keyboard presses.
-Updates to the car's state are presented the to the browser for viewing.
+## Description
 
-This is what the user interface looks like:
+Implement a 5 function calculator using jQuery and a starter file that provides the visual layout.
 
-![alt tag](https://github.com/zenglenn42/utbootcamp/blob/master/week-02/car-webapp-mvc/driveCar.png)
+## User Interface
+
+![alt tag](assets/images/calc.png)
+
+## Design
+
+The calculator is implemented under a Model View Controller (MVC)
+pattern depicted below.
+
+```javascript
+                                                             [ keyboard ]
+                                                                  |
+                                                                  | triggers
+    Model              View                          Controller   v
++-------------+  +----------------+         +-----------------------------------+
+| calc object |  | calc user i/f  | updates | $(document).ready(calcController) |
+|             |  | browser window |    +----|                                   |
++-------------+  +----------------+    |    +-----------------------------------+
+   calc.js  ^        index.html        |                 controller.js
+            | updates                  |             
+            +--------------------------+
+```
