@@ -79,3 +79,11 @@ for (var i = 0; i < deck.length; i++) {
     }
 }
 console.log("This missing card is:", freq);
+
+/*
+
+Typical output:
+
+{ '9': 3, Clubs: 12 }
+
+*/
