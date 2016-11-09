@@ -35,7 +35,7 @@ for (var j = 0; j < files.length; j++) {
 		}
 	}
 	if (!sorted) {
-		for (let i = 0; i < imageExt.length; i++) {
+		for (let i = 0; i < videoExt.length; i++) {
 			if (str.endsWith(videoExt[i])) {
 				videos.push(str)
 				sorted = true;
