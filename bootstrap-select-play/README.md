@@ -1,4 +1,4 @@
-### Dropdown selection buttons using the bootstrap-select jQuery plugin
+# Dropdown selection buttons using the bootstrap-select jQuery plugin
 
 ## I recreated a bootstrap-select example from bootsnipp locally:
 
