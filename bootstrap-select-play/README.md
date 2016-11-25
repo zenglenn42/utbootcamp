@@ -6,4 +6,4 @@
 
 ## then curated some of the features I like under bootsnipp-riff:
 
-![alt tag](bootsnipp-riff/img/readme.png)
+![alt tag](bootsnipp-curated/img/readme.png)
