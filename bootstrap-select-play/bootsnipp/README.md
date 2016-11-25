@@ -2,4 +2,4 @@
 
 ## bootstrap-select example from bootsnipp
 
-![alt tag](bootsnipp/img/readme.png)
+![alt tag](img/readme.png)
