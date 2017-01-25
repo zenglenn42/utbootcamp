@@ -1,0 +1,27 @@
+body {
+		background-repeat: no-repeat;
+		background-position: top center;
+		background-size: cover;
+		font-family: sans-serif;
+}
+
+p {
+	margin: 0px;
+	color: white;
+	background-color: rgba(64,64,64,0.5);
+	font-size: 3em;
+}
+
+@media screen and (orientation: portrait) {
+	body {
+		background-image: url("portrait.jpg");
+		background-color: black;
+	}
+}
+
+@media screen and (orientation: landscape) {
+	body {
+		background-image: url("landscape.jpg");
+		background-color: #D0C7C2;
+	}
+}
