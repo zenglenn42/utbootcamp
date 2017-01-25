@@ -2,4 +2,4 @@
 
 ## Change background image based upon portrait / landscape orientation.
 
-(demo.png)
+![alt tag](demo.png)
