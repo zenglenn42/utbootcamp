@@ -1,0 +1,44 @@
+* {
+	text-align: center;
+}
+
+body {
+	width: 90%;
+	margin: 0 auto;
+	min-width: 4em;
+	max-width: 80em;
+}
+
+section {
+	overflow: auto;
+}
+
+nav, article, footer {
+	background-color: #efefef;
+	margin: 1%;
+}
+
+nav, footer {
+	padding: 0.5em 0;
+}
+
+article {
+	height: 10em;
+	margin-bottom: 1em;
+}
+
+.column {
+	background-color: #efefef;
+	margin: 1%;
+	width: 31.3%;
+	float: left;
+}
+
+.column-right {
+	margin-right: 0%;
+}
+
+li {
+	display: inline;
+	padding: 0.5em 0.25em;
+}

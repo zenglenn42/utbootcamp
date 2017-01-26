@@ -1,0 +1,44 @@
+* {
+	text-align: center;
+}
+
+body {
+	width: 960px;
+	margin: 0 auto;
+}
+
+
+section {
+	overflow: auto;
+	height: 100%;
+}
+
+nav, article, footer {
+	background-color: #efefef;
+	margin: 10px;
+	padding: 10px;
+}
+
+
+
+
+article {
+	height: 10em;
+}
+
+.column {
+	background-color: #efefef;
+	margin: 10px;
+	width: 300px;
+	float: left;
+}
+
+
+
+
+
+
+li {
+	display: inline;
+	padding: 5px;
+}
